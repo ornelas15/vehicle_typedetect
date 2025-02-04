@@ -1,0 +1,8 @@
+train: ./data/vehicle_dataset/train.txt
+val: ./data/vehicle_dataset/valid.txt
+test: ./data/vehicle_dataset/test.txt
+
+nc: 5
+names: ['Car', 'Truck', 'Motorcycle', 'Van', 'Bus']
+
+
