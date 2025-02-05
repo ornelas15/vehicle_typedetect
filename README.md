@@ -119,10 +119,10 @@ Run detect_dual with --device 0,1 and --sync_bn if dual GPU.
 
 ### References
 This code was adapted from the original versions of the YOLOv7 and YOLOV9 official repository in the following links:
-	```bash
+
 	[YOLOv7 GitHub](https://github.com/WongKinYiu/yolov7)
 	[YOLOv9 GitHub](https://github.com/WongKinYiu/yolov9)
-	```  
+  
 	
 
 
