@@ -14,7 +14,7 @@ To install the necessary dependencies for this project, follow the steps below.
 1. **Clone the repository**:
 	```bash
 	git clone git@github.com:ornelas15/vehicle_detection.git or download .zip
-	cd lpr
+	cd vehicle_detection
 	```
 
 2. **Install requirements**:
