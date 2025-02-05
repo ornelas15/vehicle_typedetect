@@ -121,12 +121,10 @@ Run detect_dual with --device 0,1 and --sync_bn if dual GPU.
 This code was adapted from the original versions of the YOLOv7 and YOLOV9 official repository in the following links:
 	```bash
 	[YOLOv7 GitHub](https://github.com/WongKinYiu/yolov7)
-	```
-	```bash
 	[YOLOv9 GitHub](https://github.com/WongKinYiu/yolov9)
 	```  
 	
-### Citation
+
 
 	```bash
 	@inproceedings{wang2023yolov7,
@@ -135,9 +133,7 @@ This code was adapted from the original versions of the YOLOv7 and YOLOV9 offici
 	  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
 	  year={2023}
 	}
-	```
-	
-	```bash
+
 	@article{wang2024yolov9,
 	  title={{YOLOv9}: Learning What You Want to Learn Using Programmable Gradient Information},
 	  author={Wang, Chien-Yao  and Liao, Hong-Yuan Mark},
