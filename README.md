@@ -23,8 +23,8 @@ To install the necessary dependencies for this project, follow the steps below.
 	```    
 
 
-### Base Weights download:
-To add.. (also available on original reps)
+### Weights download:
+To add both based (also available on original reps) and trained models.
 
 
 ### Model Training:
