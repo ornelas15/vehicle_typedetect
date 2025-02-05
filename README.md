@@ -126,7 +126,7 @@ This code was adapted from the original versions of the YOLOv7 and YOLOV9 offici
 	
 YOLO articles:
 
-	```bash
+
 	@inproceedings{wang2023yolov7,
 	  title={{YOLOv7}: Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors},
 	  author={Wang, Chien-Yao and Bochkovskiy, Alexey and Liao, Hong-Yuan Mark},
@@ -140,7 +140,7 @@ YOLO articles:
 	  booktitle={arXiv preprint arXiv:2402.13616},
 	  year={2024}
 	}
-	```  
+
 	
 
 
