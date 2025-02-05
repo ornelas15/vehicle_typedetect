@@ -9,7 +9,7 @@ def run_yolov7(weights, source, conf, img_size, output_dir, model_name):
     """Run YOLOv7 inference and save results."""
     absolute_output_dir = os.path.abspath(output_dir)
     command = (
-        f"cd ./yolov7 && "
+        f"cd ../yolov7 && "
         f"python detect.py --weights {weights} --source {source} --conf-thres {conf} --img-size {img_size} "
         f"--project {absolute_output_dir} --name {model_name} --exist-ok --save-txt --save-conf && cd .."
     )
@@ -21,7 +21,7 @@ def run_yolov7(weights, source, conf, img_size, output_dir, model_name):
 
 def run_yolov9(weights, source, conf, img_size, output_dir, model_name):
     """Run YOLOv9 inference directly."""
-    yolov9_dir = "./yolov9"
+    yolov9_dir = "../yolov9"
     command = (
         f"python {os.path.join(yolov9_dir, 'detect_dual.py')} "
         f"--weights {weights} --source {source} --conf-thres {conf} --img-size {img_size} "
@@ -172,8 +172,8 @@ def prepare_for_ensemble(boxes_list, scores_list, labels_list):
 
 def main():
     # Paths and settings
-    # test_folder = "/home/jose/Documents/advanced_ML/images"
-    test_folder="/home/jose/Documents/advanced_ML/vehicle_dataset/valid/"
+    # test_folder = "./vehicle_dataset/test"
+    test_folder="./vehicle_dataset/valid/"
     image_folder = os.path.join(test_folder, "images")
     label_folder = os.path.join(test_folder, "labels")
     output_dir = "./runs/detect"
@@ -182,19 +182,19 @@ def main():
 
     models = {
         "yolov7": {
-            "weights": "yolo-aaa.pt",
+            "weights": "yolov7.pt",
             "run_function": run_yolov7
         },
         "yolov7x": {
-            "weights": "yolo-x-aaa.pt",
+            "weights": "yolov7x.pt",
             "run_function": run_yolov7
         },
         "yolov9c": {
-            "weights": "yolov9c-run2-AAA/weights/best.pt",
+            "weights": "yolov9c.pt",
             "run_function": run_yolov9
         },
         "yolov9-e": {
-            "weights": "yolov9e-run1-AAA3/weights/best.pt",
+            "weights": "yolov9e.pt",
             "run_function": run_yolov9
         }
     }

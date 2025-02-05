@@ -10,7 +10,7 @@ def run_yolov7(weights, source, conf, img_size, output_dir, model_name):
     """Run YOLOv7 inference and save results."""
     absolute_output_dir = os.path.abspath(output_dir)
     command = (
-        f"cd ./yolov7 && "
+        f"cd ../yolov7 && "
         f"python detect.py --weights {weights} --source {source} --conf-thres {conf} --img-size {img_size} "
         f"--project {absolute_output_dir} --name {model_name} --exist-ok --save-txt --save-conf && cd .."
     )
@@ -21,7 +21,7 @@ def run_yolov7(weights, source, conf, img_size, output_dir, model_name):
 
 def run_yolov9(weights, source, conf, img_size, output_dir, model_name):
     """Run YOLOv9 inference directly."""
-    yolov9_dir = "./yolov9"
+    yolov9_dir = "../yolov9"
     command = (
         f"python {os.path.join(yolov9_dir, 'detect_dual.py')} "
         f"--weights {weights} --source {source} --conf-thres {conf} --img-size {img_size} "
@@ -127,27 +127,27 @@ def visualize_results(image_path, output_images, wbf_image_path):
 
 def main():
     # Paths and settings
-    image_source = "/home/jose/Documents/advanced_ML/images/images/image1.jpg"
-    output_dir = "./runs/detect"
+    image_source = "../images/image1.jpg"
+    output_dir = "./runs/wbf"
     img_size = 640
     conf = 0.25
-    wbf_output_path = "./runs/detect/wbf_result.jpg"
+    wbf_output_path = "./runs/wbf/wbf_result.jpg"
 
     models = {
         "yolov7": {
-            "weights": "yolo-aaa.pt",
+            "weights": "yolov7.pt",
             "run_function": run_yolov7
         },
         "yolov7x": {
-            "weights": "yolo-x-aaa.pt",
+            "weights": "yolov7x.pt",
             "run_function": run_yolov7
         },
         "yolov9c": {
-            "weights": "yolov9c-run2-AAA/weights/best.pt",
+            "weights": "yolov9c.pt",
             "run_function": run_yolov9
         },
         "yolov9-e": {
-            "weights": "yolov9e-run1-AAA3/weights/best.pt",
+            "weights": "yolov9e.pt",
             "run_function": run_yolov9
         }
     }

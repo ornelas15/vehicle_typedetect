@@ -6,7 +6,7 @@
 ### Introduction
 Repository content: Trained models with ensemble learning for vehicle detection using open source datasets, using YOLOv7 and YOLOv9.
 Keep in mind the open-source datasets were not fully controlled, since several images contain missing labels, this could impact the model performance on out of the box images.
-For further improvements, train these models on your dataset.     
+For further improvements, train these models on your dataset.    
 
 ### Installation:
 To install the necessary dependencies for this project, follow the steps below.
@@ -23,6 +23,10 @@ To install the necessary dependencies for this project, follow the steps below.
 	```    
 
 
+### Base Weights download:
+To add.. (also available on original reps)
+
+
 ### Model Training:
 
 Before training, make sure to check out if all arguments are correct.
@@ -31,9 +35,9 @@ Required:
 - CFG
 - DATA
 - HYP
-- EPOCHS
-- BATCH_SIZE
-- IMG_SIZE
+- EPOCHS (20 def)
+- BATCH_SIZE (16 def)
+- IMG_SIZE (640 def)
 
 To train on yolov7 use the following command, change the --args if needed:
 
@@ -60,78 +64,87 @@ To train on yolov9 use the following command, change the --args if needed:
 2. **Run train.py for dual GPU**:
 
 	```bash
-	python3 train_dual.py --device 0,1 --sync_bn --batch 16 --data 'data/vehicle_dataset/data.yaml' --cfg models/detect/yolov9-c.yaml --weights 'weights/yolov9-c.pt' --name yolov9-run1 --hyp 'data/hyps/hyp.scratch-high.yaml'  
+	python3 train_dual.py --device 0,1 --sync_bn --batch 16 --data 'data/vehicle_dataset/data.yaml' --cfg models/detect/yolov9-c.yaml --weights 'weights/yolov9-c.pt' --name yolov9-run1 --hyp 'data/hyps/hyp.scratch-high.yaml'   
 	```
 
 
 ### Model Testing:
+Before testing, make sure to check out if all arguments are correct.
 
 1. **Test YOLOv7 trained**:
 
 	```bash
-	python3
+	python3 test.py --weights './yolov7-best.pt'
 	```
+	
+Run test.py with --device 0,1 and --sync_bn if dual GPU.
   
 2. **Test YOLOv9 trained**:
 
 	```bash
-	python3 
+	python3 val.py --conf 0.001 --iou 0.7 --weights './yolov9c-best.pt' 
 	```
+
+Run val_dual with --device 0,1 and --sync_bn if dual GPU.  
      
 
 ### Inference:
 
 1. **Inference on images with YOLOv7:**
 	```bash
-	python3 
+	python3 detect.py --source './data/image.jpg' --weights './yolov7-best.pt' --name yolov7_inference
 	```
+Run detect.py with --device 0,1 and --sync_bn if dual GPU.
      
 1. **Inference on images with YOLOv9:**
 
 	```bash
-	python3 
+	python3 detect.py --source './data/image.jpg' --weights './yolov9c-best.pt' --name yolov9_inference
 	```
-
+Run detect_dual with --device 0,1 and --sync_bn if dual GPU.  
 
 
 ### Ensemble Learning (WBF):
 
 1. **Apply WBF on trained weights**:
 	```bash
-	python3 
+	python3 wbf_eval.py
 	```
 
 2. **View WBF**: 
 	```bash
-	python3
-	```
+	python3 wbf_view.py
+	```  
 
 
 ### References
 This code was adapted from the original versions of the YOLOv7 and YOLOV9 official repository in the following links:
-[GitHub](https://github.com/WongKinYiu/yolov7)
-[GitHub](https://github.com/WongKinYiu/yolov9)
-
+	```bash
+	[YOLOv7 GitHub](https://github.com/WongKinYiu/yolov7)
+	```
+	```bash
+	[YOLOv9 GitHub](https://github.com/WongKinYiu/yolov9)
+	```  
 	
 ### Citation
 
 	```bash
 	@inproceedings{wang2023yolov7,
-  title={{YOLOv7}: Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors},
-  author={Wang, Chien-Yao and Bochkovskiy, Alexey and Liao, Hong-Yuan Mark},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year={2023}
-}
+	  title={{YOLOv7}: Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors},
+	  author={Wang, Chien-Yao and Bochkovskiy, Alexey and Liao, Hong-Yuan Mark},
+	  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+	  year={2023}
+	}
 	```
 	
 	```bash
 	@article{wang2024yolov9,
-  title={{YOLOv9}: Learning What You Want to Learn Using Programmable Gradient Information},
-  author={Wang, Chien-Yao  and Liao, Hong-Yuan Mark},
-  booktitle={arXiv preprint arXiv:2402.13616},
-  year={2024}
-}
-	```
+	  title={{YOLOv9}: Learning What You Want to Learn Using Programmable Gradient Information},
+	  author={Wang, Chien-Yao  and Liao, Hong-Yuan Mark},
+	  booktitle={arXiv preprint arXiv:2402.13616},
+	  year={2024}
+	}
+	```  
 	
 
 
