@@ -53,7 +53,7 @@ To train on yolov7 use the following command, change the --args if needed:
 	python3 train.py --device 0,1 --sync-bn --data 'data/vehicle_dataset/data.yaml' --cfg 'cfg/yolov7.yaml' --weights 'weights/yolov7_training.pt' --hyp 'data/hyp.scratch.custom.yaml' --name yolov7-run1 --batch-size 16
 	```
   
-To train on yolov9 use the following command, change the --args if needed:
+	To train on yolov9 use the following command, change the --args if needed:
 
 1. **Run train.py for single GPU**:
 
@@ -77,7 +77,7 @@ Before testing, make sure to check out if all arguments are correct.
 	python3 test.py --weights './yolov7-best.pt'
 	```
 	
-Run test.py with --device 0,1 and --sync_bn if dual GPU.
+	Run test.py with --device 0,1 and --sync_bn if dual GPU.
   
 2. **Test YOLOv9 trained**:
 
@@ -85,7 +85,7 @@ Run test.py with --device 0,1 and --sync_bn if dual GPU.
 	python3 val.py --conf 0.001 --iou 0.7 --weights './yolov9c-best.pt' 
 	```
 
-Run val_dual with --device 0,1 and --sync_bn if dual GPU.  
+	Run val_dual with --device 0,1 and --sync_bn if dual GPU.  
      
 
 ### Inference:
@@ -94,14 +94,14 @@ Run val_dual with --device 0,1 and --sync_bn if dual GPU.
 	```bash
 	python3 detect.py --source './data/image.jpg' --weights './yolov7-best.pt' --name yolov7_inference
 	```
-Run detect.py with --device 0,1 and --sync_bn if dual GPU.
+	Run detect.py with --device 0,1 and --sync_bn if dual GPU.
      
 1. **Inference on images with YOLOv9:**
 
 	```bash
 	python3 detect.py --source './data/image.jpg' --weights './yolov9c-best.pt' --name yolov9_inference
 	```
-Run detect_dual with --device 0,1 and --sync_bn if dual GPU.  
+	Run detect_dual with --device 0,1 and --sync_bn if dual GPU.  
 
 
 ### Ensemble Learning (WBF):
@@ -120,8 +120,8 @@ Run detect_dual with --device 0,1 and --sync_bn if dual GPU.
 ### References
 This code was adapted from the original versions of the YOLOv7 and YOLOV9 official repository in the following links:
 
-[YOLOv7 GitHub](https://github.com/WongKinYiu/yolov7)
-[YOLOv9 GitHub](https://github.com/WongKinYiu/yolov9)
+[YOLOv7 GitHub](https://github.com/WongKinYiu/yolov7)  
+[YOLOv9 GitHub](https://github.com/WongKinYiu/yolov9)  
   
 	
 YOLO articles:
