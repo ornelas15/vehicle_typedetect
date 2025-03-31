@@ -1,4 +1,4 @@
-# Vehicle Detection with Ensemble Learning
+# Vehicle Type Detection with Ensemble Learning
 
 **Authors:** David Ornelas, José Santos, Raquel Pereira.  
 **Affiliation:** IEETA/DETI, University of Aveiro, Aveiro, 3810-193, Portugal  
